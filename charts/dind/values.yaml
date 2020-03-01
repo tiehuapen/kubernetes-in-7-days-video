@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: docker
-  tag: stable-dind #17.12.1-ce-dind
+  tag: 17.12.1-ce-dind
   pullPolicy: IfNotPresent
 
 service:

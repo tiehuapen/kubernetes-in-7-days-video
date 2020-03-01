@@ -49,7 +49,7 @@ podTemplate(label: label,
         }
 
         stage('Push image') {
-          withDockerRegistry([credentialsId: 'aliyun-docker-hub']) {
+          withDockerRegistry([credentialsId: 'aliyun-docker-hub', url: 'registry.cn-beijing.aliyuncs.com']) {
             withEnv(['VERSION=' + env.VERSION.trim(), 'COMMIT=' + env.COMMIT.trim()]) {
               sh "docker push registry.cn-beijing.aliyuncs.com/tiehuapen/first-app:${VERSION}.${COMMIT}"
               sh 'docker push registry.cn-beijing.aliyuncs.com/tiehuapen/first-app:latest'
